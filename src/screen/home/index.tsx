@@ -1,9 +1,11 @@
-import { FC } from "react"
-import { View } from "react-native"
+import React, { FC } from 'react'
+import { Text, View } from "react-native"
 
 const Home:FC<any> = () => {
     return(
-        <View></View>
+        <View>
+            <Text>Home</Text>
+        </View>
     )
 }
 
