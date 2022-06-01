@@ -11,13 +11,13 @@ import Input from '../../components/Input';
 import AlreadyLoginAlert, {
   IAlreadyLoginAlert,
 } from '../../components/AlreadyLoginAlert';
-import LoginHeader from '../../components/LoginHeader';
 import Fonts from '../../utils/Fonts';
 import Colors from '../../utils/Colors';
-
+import {HOME} from '../../navigation/routeNames';
+import { useRecoilState } from 'recoil';
+import { userAtom } from '../../store/atoms/userAtom';
 
 const Login: FC<any> = ({navigation}) => {
-
   const [isLoading, setIsLoading] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(false);
@@ -25,6 +25,9 @@ const Login: FC<any> = ({navigation}) => {
   const [email, setEmail] = useState('');
   const loginCredentials = useRef({email: '', password: ''});
   const loginAlert = useRef<IAlreadyLoginAlert>(null);
+
+  const [user, setUser] = useRecoilState(userAtom)
+
   const onPasswordChange = (value: string) => {
     setPassword(value);
   };
@@ -33,26 +36,18 @@ const Login: FC<any> = ({navigation}) => {
     setEmail(value.trim());
   };
 
-  
-   
-     
-      
-      
-       
-      
-
   const forgotPassword = async () => {
     navigation.navigate('ForgotPassword');
   };
 
   const signOut = async () => {
-    
     return;
   };
 
-  
-
-
+  const handleLogin = () => {
+    setUser({...user, isLoggedIn:true})
+    navigation.navigate(HOME);
+  };
 
   return (
     <ScrollableContainer
@@ -64,9 +59,9 @@ const Login: FC<any> = ({navigation}) => {
           <Image source={require('../../assets/images/password.png')} />
         </View>
       )} */}
-    
+
       <View style={styles.body}>
-        {(
+        {
           <View style={styles.profileWrapper}>
             <View style={styles.profilePictureWrapper}>
               <Image
@@ -79,9 +74,9 @@ const Login: FC<any> = ({navigation}) => {
               {profile.firstname} {profile.lastname}
             </Text> */}
           </View>
-        )}
+        }
         <View style={styles.formContainer}>
-          {(
+          {
             <Input
               validationRules="required|email"
               placeholder="Enter Email"
@@ -92,7 +87,7 @@ const Login: FC<any> = ({navigation}) => {
               style={styles.input}
               hasErrors={v => setIsEmailValid(v)}
             />
-          )}
+          }
           <Input
             validationRules="required"
             placeholder="Enter Password"
@@ -108,17 +103,17 @@ const Login: FC<any> = ({navigation}) => {
             title="Log in"
             // style={styles.forgotPassword}
             textStyle={{fontSize: Fonts.w(12)}}
-            // onPress={handleLogin}
-            loading={isLoading}
+            onPress={handleLogin}
+            // loading={isLoading}
             disabled={isEmailValid && isPasswordValid}
           />
-          <TouchableButton
+          {/* <TouchableButton
             title="Forgot Password?"
             transparent
             style={styles.forgotPassword}
             textStyle={{fontSize: Fonts.w(12)}}
             onPress={forgotPassword}
-          />
+          /> */}
           {/* {profile && biometryLogin && (
             <View style={styles.fingerPrintWrapper}>
               <TouchableOpacity onPress={handleLogin}>
@@ -142,16 +137,16 @@ const Login: FC<any> = ({navigation}) => {
       </View>
       <AlreadyLoginAlert
         ref={loginAlert}
-        onContinue={() =>
-            console.log("here==>")
-        //   onLogin(
-        //     loginCredentials.current.email,
-        //     loginCredentials.current.password,
-        //     true,
-        //   )
+        onContinue={
+          () => console.log('here==>')
+          //   onLogin(
+          //     loginCredentials.current.email,
+          //     loginCredentials.current.password,
+          //     true,
+          //   )
         }
       />
-     </ScrollableContainer>
+    </ScrollableContainer>
   );
 };
 

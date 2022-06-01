@@ -1,23 +1,19 @@
-
-import React from 'react'
- import {NavigationContainer} from '@react-navigation/native';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 import AuthNavigation from './AuthNavigation';
 import HomeNavigation from './HomeNavigation';
+import {useRecoilValue} from 'recoil';
+import {userAtom} from '../store/atoms/userAtom';
 
- 
- 
- const AppNavigation = () => {
-  
- 
-   return (
-     <NavigationContainer>
-  
-             <AuthNavigation />
-       
-            {/* <HomeNavigation /> */}
-     </NavigationContainer>
-   );
- };
- 
- export default AppNavigation;
- 
+const AppNavigation = () => {
+  const {isLoggedIn} = useRecoilValue(userAtom);
+  console.log('isLoggedin====>', isLoggedIn);
+
+  return (
+    <NavigationContainer>
+      {isLoggedIn ? <HomeNavigation /> : <AuthNavigation />}
+    </NavigationContainer>
+  );
+};
+
+export default AppNavigation;

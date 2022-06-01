@@ -1,16 +1,30 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screen/home';
-import TeamDetails from '../screen/teamDetails/teamDetails';
+import TeamDetails from '../screen/teamDetails';
+import { HOME, TEAM_DETAILS } from './routeNames';
+import HeadBackButton from '../components/HeadBackButton';
+import headerDefault from './headerDefault';
 
 const Stack = createNativeStackNavigator();
 
 const HomeNavigation = () => {
     return (
    
-        <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="TeamDetails" component={TeamDetails} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Navigator initialRouteName={HOME}
+       
+        >
+        <Stack.Screen 
+          options={{
+            headerLeft: () => <HeadBackButton />,
+            // ...headerDefault,
+          }}
+        name={TEAM_DETAILS} component={TeamDetails} 
+        
+        />
+        <Stack.Screen 
+        
+        name={HOME} component={Home} />
         </Stack.Navigator>
        
     );
