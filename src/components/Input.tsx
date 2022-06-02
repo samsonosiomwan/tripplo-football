@@ -537,7 +537,6 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.gray,
     width: '100%',
     height: Fonts.h(30),
-    // paddingBottom: Fonts.h(4),
   },
   clearInput: {
     textAlignVertical: 'bottom',
@@ -557,13 +556,7 @@ const styles = StyleSheet.create({
   inputError: {
     borderColor: Colors.error,
   },
-  // error: {
-  //   marginTop: Fonts.h(4),
-  //   fontFamily: Fonts.Gilroy_Bold,
-  //   fontWeight: '500',
-  //   color: Colors.error,
-  //   fontSize: Fonts.w(12),
-  // },
+
   strictPasswordWrapper: {
     flexDirection: 'row',
     marginVertical: Fonts.h(4),

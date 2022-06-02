@@ -1,89 +1,90 @@
-import React, { FC } from "react"
-import { StyleSheet, Text,  View } from "react-native"
-import Colors from "../../utils/Colors";
-import Fonts from "../../utils/Fonts";
+import React, {FC} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import Colors from '../../utils/Colors';
+import Fonts from '../../utils/Fonts';
 
-const TeamDetails:FC<any> = ({navigation}) => {
-    return(
-        <View style={styles.container}>
-            <Text>welcome</Text>
-        </View>
-    )
-}
+const TeamDetails: FC<any> = ({route}) => {
+  const {stats} = route?.params?.standingsDetails;
+  const {team} = route?.params?.standingsDetails;
+
+  return (
+    <>
+    <View style={styles.container}>
+      <View style={styles.titleWrapper}>
+        <Text style={styles.title}>Team Details</Text>
+      </View>
+          <View >
+              <View style={styles.contentWrapper}>
+                <Text style={styles.content}>name</Text>
+                <Text style={styles.content}>{team.displayName}</Text>
+              </View>
+              <View style={styles.contentWrapper}>
+                <Text style={styles.content}>location</Text>
+                <Text style={styles.content}>{team.location}</Text>
+              </View>
+              <View style={styles.contentWrapper}>
+                <Text style={styles.content}>abbriviation</Text>
+                <Text style={styles.content}>{team.abbreviation}</Text>
+              </View>
+              <View style={styles.contentWrapper}>
+                <Text style={styles.content}>active</Text>
+                <Text style={styles.content}>{team.isActive?"Yes":"No"}</Text>
+              </View>
+          </View>
+    </View>
+
+    <View style={styles.container}>
+      <View style={styles.titleWrapper}>
+        <Text style={styles.title}>Stats</Text>
+      </View>
+
+      {stats?.map((item: any, index: number) => {
+        return (
+          <View key={index}>
+            {(item?.name === 'losses' || item?.name === 'wins' || item?.name === 'ties') && (
+              <View style={styles.contentWrapper}>
+                <Text style={styles.content}>{item.name}</Text>
+                <Text style={styles.content}>{item?.value}</Text>
+              </View>
+            )}
+          </View>
+        );
+      })}
+    </View>
+    </>
+   
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-      borderRadius: 8,
-      backgroundColor: Colors.red,
-      justifyContent: 'center',
-      alignItems: 'flex-end',
-      paddingRight: Fonts.w(8),
-      marginVertical: Fonts.h(4),
-      marginHorizontal: Fonts.h(20),
-      paddingVertical: Fonts.h(30),
+  container: {
+    borderRadius: 8,
+    backgroundColor: Colors.white,
+    paddingRight: Fonts.w(8),
+    marginVertical: Fonts.h(4),
+    marginHorizontal: Fonts.h(10),
+    paddingVertical: Fonts.h(10),
+    paddingHorizontal: Fonts.h(10),
+  },
+  title: {
+    color: Colors.white,
+    fontWeight: '400',
+    fontSize: Fonts.w(30),
+    textAlign: 'center',
+  },
+  titleWrapper: {
+    justifyContent: 'center',
+    backgroundColor: Colors.secondary,
+  },
+  contentWrapper: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingVertical: Fonts.h(10),
+  },
+  content: {
+    fontSize: Fonts.w(15),
+    textTransform:'capitalize'
+  },
+});
 
-
-    },
-    hiddenItemTouchable: {
-      width: Fonts.w(22),
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    stock: {
-      borderRadius: 8,
-      backgroundColor: Colors.white,
-      padding: Fonts.w(16),
-      shadowColor: 'rgba(161, 160, 180, 0.08)',
-      shadowOffset: {width: 0, height: 0},
-      shadowRadius: 16,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
-    stockLhs: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      flex: 2,
-      marginRight: Fonts.w(12),
-    },
-    stockImage: {
-      width: Fonts.w(24),
-      height: Fonts.w(24),
-      marginRight: Fonts.w(12),
-    },
-    stockName: {
-      fontFamily: Fonts.Gilroy_Bold,
-      fontSize: Fonts.w(10),
-      fontWeight: '700',
-      lineHeight: Fonts.h(12),
-      marginBottom: Fonts.h(6),
-      color: Colors.black,
-    },
-    stockCompany: {
-      fontFamily: Fonts.Gilroy_Bold,
-      fontWeight: '500',
-      color: '#828282',
-      fontSize: Fonts.w(8),
-      lineHeight: Fonts.h(10),
-    },
-    stockRhs: {
-      flex: 1,
-      alignItems: 'flex-end',
-    },
-    stockPrice: {
-      fontSize: Fonts.w(12),
-      lineHeight: Fonts.h(15),
-      color: Colors.text,
-      marginBottom: Fonts.h(4),
-      fontFamily: Fonts.Gilroy_Bold,
-      fontWeight: 'bold',
-      textAlign: 'right',
-    },
-    stockDeep: {
-      fontSize: Fonts.w(8),
-      fontFamily: Fonts.Gilroy_Bold,
-      fontWeight: '600',
-    },
-  });
-
-export default TeamDetails
+export default TeamDetails;

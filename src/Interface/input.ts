@@ -1,3 +1,4 @@
+import { AxiosResponse } from 'axios';
 import {ReactNode} from 'react';
 import {KeyboardType, StyleProp, TextStyle, ViewStyle} from 'react-native';
 
@@ -121,3 +122,6 @@ export interface DatePickerProps {
   solidInput?: boolean;
   hasErrors?: (error: boolean) => void;
 }
+
+
+export type RequestResponse = AxiosResponse<any, any> | any;

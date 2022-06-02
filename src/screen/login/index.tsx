@@ -1,13 +1,9 @@
-import {StackScreenProps} from '@react-navigation/stack';
-import React, {FC, useEffect, useRef, useState} from 'react';
-import {Alert, Image, StyleSheet, Text, View, Keyboard} from 'react-native';
+
+import React, {FC,  useRef, useState} from 'react';
+import {Alert, Image, StyleSheet,  View, } from 'react-native';
 import ScrollableContainer from '../../components/ScrollableContainer';
 import TouchableButton from '../../components/TouchableButton';
-
-import {TouchableOpacity} from 'react-native-gesture-handler';
-
 import Input from '../../components/Input';
-
 import AlreadyLoginAlert, {
   IAlreadyLoginAlert,
 } from '../../components/AlreadyLoginAlert';
@@ -16,9 +12,9 @@ import Colors from '../../utils/Colors';
 import {HOME} from '../../navigation/routeNames';
 import { useRecoilState } from 'recoil';
 import { userAtom } from '../../store/atoms/userAtom';
+import { user } from '../../mock/user';
 
 const Login: FC<any> = ({navigation}) => {
-  const [isLoading, setIsLoading] = useState(false);
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [password, setPassword] = useState('');
@@ -26,7 +22,7 @@ const Login: FC<any> = ({navigation}) => {
   const loginCredentials = useRef({email: '', password: ''});
   const loginAlert = useRef<IAlreadyLoginAlert>(null);
 
-  const [user, setUser] = useRecoilState(userAtom)
+  const [userState, setUserState] = useRecoilState(userAtom)
 
   const onPasswordChange = (value: string) => {
     setPassword(value);
@@ -36,43 +32,48 @@ const Login: FC<any> = ({navigation}) => {
     setEmail(value.trim());
   };
 
-  const forgotPassword = async () => {
-    navigation.navigate('ForgotPassword');
-  };
 
-  const signOut = async () => {
-    return;
-  };
+
 
   const handleLogin = () => {
-    setUser({...user, isLoggedIn:true})
-    navigation.navigate(HOME);
+  
+    if (email ===  user.email && password === user.password) {
+      setUserState({...userState, isLoggedIn:true})
+      navigation.navigate(HOME);
+    } else {
+      let showModal = false;
+
+      let message = "Password or email doesn't match";
+     
+      if (!showModal) {
+        Alert.alert('Authentication failed', message, [{text: 'ok'}]);
+      } else {
+        loginCredentials.current = {
+          email: email,
+          password: password,
+        };
+        loginAlert.current?.open();
+      }
+    }
+   
   };
 
   return (
     <ScrollableContainer
       style={styles.container}
       containerStyle={styles.childContainer}>
-      {/* {!profile && (
-        <View style={styles.headerBody}>
-          <LoginHeader smallText="Login" largeText="Sign into your account" />
-          <Image source={require('../../assets/images/password.png')} />
-        </View>
-      )} */}
+     
 
       <View style={styles.body}>
         {
-          <View style={styles.profileWrapper}>
+          <View style={styles.logoWrapper}>
             <View style={styles.profilePictureWrapper}>
               <Image
                 style={styles.profilePicture}
                 source={require('../../assets/images/logo.png')}
               />
             </View>
-            {/* <Text style={styles.welcomeBackText}>Welcome Back</Text>
-            <Text style={styles.accountName}>
-              {profile.firstname} {profile.lastname}
-            </Text> */}
+       
           </View>
         }
         <View style={styles.formContainer}>
@@ -101,49 +102,20 @@ const Login: FC<any> = ({navigation}) => {
           />
           <TouchableButton
             title="Log in"
-            // style={styles.forgotPassword}
+      
             textStyle={{fontSize: Fonts.w(12)}}
             onPress={handleLogin}
-            // loading={isLoading}
+        
             disabled={isEmailValid && isPasswordValid}
           />
-          {/* <TouchableButton
-            title="Forgot Password?"
-            transparent
-            style={styles.forgotPassword}
-            textStyle={{fontSize: Fonts.w(12)}}
-            onPress={forgotPassword}
-          /> */}
-          {/* {profile && biometryLogin && (
-            <View style={styles.fingerPrintWrapper}>
-              <TouchableOpacity onPress={handleLogin}>
-                <Image
-                  source={require('../../assets/images/fingerprint.png')}
-                />
-              </TouchableOpacity>
-              <Text>Use Biometric</Text>
-            </View>
-          )} */}
-          {/* {profile && (
-            <TouchableButton
-              title="Sign Out"
-              transparent
-              style={[styles.forgotPassword, {marginTop: Fonts.h(45)}]}
-              textStyle={{fontSize: Fonts.w(12)}}
-              onPress={signOut}
-            />
-          )} */}
+        
+        
         </View>
       </View>
       <AlreadyLoginAlert
         ref={loginAlert}
         onContinue={
           () => console.log('here==>')
-          //   onLogin(
-          //     loginCredentials.current.email,
-          //     loginCredentials.current.password,
-          //     true,
-          //   )
         }
       />
     </ScrollableContainer>
@@ -168,7 +140,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  profileWrapper: {
+  logoWrapper: {
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: Fonts.h(32),
@@ -207,7 +179,6 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
   formContainer: {
-    // flexGrow: 1,
     justifyContent: 'center',
   },
   form: {
@@ -220,28 +191,6 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: Fonts.h(34),
-  },
-  forgotPassword: {
-    alignSelf: 'center',
-    height: undefined,
-    paddingVertical: 0,
-    marginTop: Fonts.h(7),
-    lineHeight: Fonts.h(15),
-  },
-  fingerPrintWrapper: {
-    alignSelf: 'center',
-    marginTop: Fonts.h(40),
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  fingerPrintText: {
-    fontFamily: Fonts.Raleway,
-    fontWeight: '400',
-    fontSize: Fonts.w(12),
-    lineHeight: Fonts.h(18),
-    textAlign: 'center',
-    color: Colors.text,
-    marginTop: Fonts.h(9),
   },
 });
 export default Login;

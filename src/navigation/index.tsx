@@ -7,7 +7,6 @@ import {userAtom} from '../store/atoms/userAtom';
 
 const AppNavigation = () => {
   const {isLoggedIn} = useRecoilValue(userAtom);
-  console.log('isLoggedin====>', isLoggedIn);
 
   return (
     <NavigationContainer>

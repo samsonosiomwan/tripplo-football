@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=2020&sort=asc'
