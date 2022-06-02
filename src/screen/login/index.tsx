@@ -18,7 +18,7 @@ import {  getAuthData, storeAuthData, } from '../../store/storage';
 const Login: FC<any> = ({navigation}) => {
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('nil');
+  const [username, setUsername] = useState('');
   const loginCredentials = useRef({username: '', password: ''});
   const loginAlert = useRef<IAlreadyLoginAlert>(null);
 
