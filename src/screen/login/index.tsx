@@ -1,5 +1,5 @@
 
-import React, {FC,  useRef, useState} from 'react';
+import React, {FC,  useEffect,  useLayoutEffect,  useRef, useState} from 'react';
 import {Alert, Image, StyleSheet,  View, } from 'react-native';
 import ScrollableContainer from '../../components/ScrollableContainer';
 import TouchableButton from '../../components/TouchableButton';
@@ -9,19 +9,23 @@ import AlreadyLoginAlert, {
 } from '../../components/AlreadyLoginAlert';
 import Fonts from '../../utils/Fonts';
 import Colors from '../../utils/Colors';
-import {HOME} from '../../navigation/routeNames';
-import { useRecoilState } from 'recoil';
+import {HOME, TEAM_DETAILS} from '../../navigation/routeNames';
+import { useRecoilState} from 'recoil';
 import { userAtom } from '../../store/atoms/userAtom';
 import { user } from '../../mock/user';
+import {  getAuthData, storeAuthData, } from '../../store/storage';
 
 const Login: FC<any> = ({navigation}) => {
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState('nil');
   const loginCredentials = useRef({username: '', password: ''});
   const loginAlert = useRef<IAlreadyLoginAlert>(null);
 
+
   const [userState, setUserState] = useRecoilState(userAtom)
+
+
 
   const onPasswordChange = (value: string) => {
     setPassword(value);
@@ -31,13 +35,26 @@ const Login: FC<any> = ({navigation}) => {
     setUsername(value.trim());
   };
 
+ useEffect(
+   ()=>{
+ getAuthData().then(
+     data=>{
+       if(data){
+        setUserState({...userState, isLoggedIn:true})
+     }
+    }
 
+ )
+  
+   },[]
+ )
 
 
   const handleLogin = () => {
   
     if (username ===  user.username && password === user.password) {
       setUserState({...userState, isLoggedIn:true})
+      storeAuthData(username)
       navigation.navigate(HOME);
     } else {
       let showModal = false;

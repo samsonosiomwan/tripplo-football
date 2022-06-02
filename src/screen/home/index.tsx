@@ -13,6 +13,7 @@ import {userAtom} from '../../store/atoms/userAtom';
 import useStandings from '../../network/reactQuery/query/getStandings';
 import ErrorText from '../../components/ErrorText';
 import EmptyListText from '../../components/EmptyListText';
+import { removeAuthValue } from '../../store/storage';
 
 const Home: FC<any> = ({navigation}) => {
   const [user, setUser] = useRecoilState(userAtom);
@@ -22,9 +23,11 @@ const Home: FC<any> = ({navigation}) => {
 
   const handleLogOut = () => {
     setUser({...user, isLoggedIn: false});
+    removeAuthValue().then(() => {
+      setUser({...user, isLoggedIn: false})});
   };
 
-  console.log("========>>>>>", isLoadingStandings, standings)
+   console.log("=========stadings",standings?.standings)
   const renderEmptyComponent = () => {
     if (isLoadingStandings) {
       return (
@@ -47,7 +50,9 @@ const Home: FC<any> = ({navigation}) => {
         data={standings?.standings}
         contentContainerStyle={{flexGrow: 1, paddingTop: Fonts.h(10)}}
         ListEmptyComponent={renderEmptyComponent}
-        keyExtractor={(item, index) => item.id + index}
+        keyExtractor={(item, index) => {
+          return  index.toString();
+         }}
         renderItem={item => (
           <Standings item={item?.item} navigation={navigation} />
         )}

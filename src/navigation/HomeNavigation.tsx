@@ -11,9 +11,9 @@ const Stack = createNativeStackNavigator();
 const HomeNavigation = () => {
     return (
    
-        <Stack.Navigator initialRouteName={HOME}
-       
-        >
+        <Stack.Navigator initialRouteName={HOME}>
+         
+        <Stack.Screen name={HOME} component={Home} />
         <Stack.Screen 
           options={{
             headerLeft: () => <HeadBackButton />,
@@ -23,9 +23,7 @@ const HomeNavigation = () => {
           }}
         name={TEAM_DETAILS} component={TeamDetails} 
         />
-        <Stack.Screen 
-        
-        name={HOME} component={Home} />
+    
         </Stack.Navigator>
        
     );
