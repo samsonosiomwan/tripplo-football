@@ -9,7 +9,7 @@ const headerDefault:  NativeStackNavigationOptions = {
     backgroundColor: Colors.textBox,
   },
   headerTitleStyle: {
-    fontSize: Fonts.w(16),
+    fontSize: Fonts.w(18),
     fontWeight: '600',
     fontFamily: Fonts.Gilroy_Bold,
     color: Colors.text,

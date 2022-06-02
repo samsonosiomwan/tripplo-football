@@ -1,11 +1,18 @@
-import React, {FC} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {FC, useLayoutEffect} from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import LogoTitle from '../../components/LogoTItle';
 import Colors from '../../utils/Colors';
 import Fonts from '../../utils/Fonts';
 
-const TeamDetails: FC<any> = ({route}) => {
+const TeamDetails: FC<any> = ({route, navigation}) => {
   const {stats} = route?.params?.standingsDetails;
   const {team} = route?.params?.standingsDetails;
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: () => <LogoTitle  title={team?.displayName}/>
+    });
+  }, []);
 
   return (
     <>

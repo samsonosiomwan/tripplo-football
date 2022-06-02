@@ -15,11 +15,10 @@ import { userAtom } from '../../store/atoms/userAtom';
 import { user } from '../../mock/user';
 
 const Login: FC<any> = ({navigation}) => {
-  const [isEmailValid, setIsEmailValid] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const loginCredentials = useRef({email: '', password: ''});
+  const [username, setUsername] = useState('');
+  const loginCredentials = useRef({username: '', password: ''});
   const loginAlert = useRef<IAlreadyLoginAlert>(null);
 
   const [userState, setUserState] = useRecoilState(userAtom)
@@ -28,8 +27,8 @@ const Login: FC<any> = ({navigation}) => {
     setPassword(value);
   };
 
-  const onEmailChange = (value: string) => {
-    setEmail(value.trim());
+  const onUsernameChange = (value: string) => {
+    setUsername(value.trim());
   };
 
 
@@ -37,7 +36,7 @@ const Login: FC<any> = ({navigation}) => {
 
   const handleLogin = () => {
   
-    if (email ===  user.email && password === user.password) {
+    if (username ===  user.username && password === user.password) {
       setUserState({...userState, isLoggedIn:true})
       navigation.navigate(HOME);
     } else {
@@ -49,7 +48,7 @@ const Login: FC<any> = ({navigation}) => {
         Alert.alert('Authentication failed', message, [{text: 'ok'}]);
       } else {
         loginCredentials.current = {
-          email: email,
+          username: username,
           password: password,
         };
         loginAlert.current?.open();
@@ -79,14 +78,13 @@ const Login: FC<any> = ({navigation}) => {
         <View style={styles.formContainer}>
           {
             <Input
-              validationRules="required|email"
-              placeholder="Enter Email"
-              onChange={onEmailChange}
-              value={email}
+              validationRules="required"
+              placeholder="Enter Username"
+              onChange={onUsernameChange}
+              value={username}
               solidInput={true}
-              label="Email"
+              label="Username"
               style={styles.input}
-              hasErrors={v => setIsEmailValid(v)}
             />
           }
           <Input
@@ -106,7 +104,7 @@ const Login: FC<any> = ({navigation}) => {
             textStyle={{fontSize: Fonts.w(12)}}
             onPress={handleLogin}
         
-            disabled={isEmailValid && isPasswordValid}
+            disabled={isPasswordValid}
           />
         
         

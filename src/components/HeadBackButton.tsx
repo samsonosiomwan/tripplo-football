@@ -11,6 +11,7 @@ const HeadBackButton: FunctionComponent<{
   onPress?: () => void;
   color?: string;
 }> = ({onPress, color}) => {
+  
   const navigation = useNavigation();
   return (
     <TouchableWithoutFeedback

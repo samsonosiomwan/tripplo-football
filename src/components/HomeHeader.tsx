@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     minHeight: Fonts.h(110),
     paddingHorizontal: Fonts.w(32),
     paddingVertical: Fonts.h(30),
-    backgroundColor: Colors.blueEnd,
+    backgroundColor: Colors.secondary,
   },
 
   content: {
