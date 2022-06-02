@@ -9,22 +9,27 @@
  */
 
 import React from 'react';
-import {SafeAreaView} from 'react-native';
 import {RecoilRoot} from 'recoil';
 import {QueryClient, QueryClientProvider} from 'react-query';
-import Login from './src/screen/login';
+
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+import AppNavigation from './src/navigation';
+
 
 const App = () => {
   const queryClient = new QueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <RecoilRoot>
-        <SafeAreaView>
-          <Login />
-        </SafeAreaView>
-      </RecoilRoot>
-    </QueryClientProvider>
+   
+      <SafeAreaProvider>
+        <QueryClientProvider client={queryClient}>
+          <RecoilRoot>
+              <AppNavigation />
+          </RecoilRoot>
+        </QueryClientProvider>
+      </SafeAreaProvider>
+
   );
 };
 

@@ -9,11 +9,19 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* tripploFootballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* tripploFootballTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-tripploFootball.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-tripploFootball.a */; };
+		0EA06630A5EE423DB528E89C /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00DB823B60514C6FB3906D92 /* Gilroy-Bold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		175D5660CA5D4D648BE47B29 /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C42FAA162A034A7C94174E21 /* Gilroy-Light.ttf */; };
+		2D06D31D07554E7EBBF62B0E /* Gilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4005CDC57FD84186A8C1042A /* Gilroy-Heavy.ttf */; };
+		410C00A2E87E41BAA85D3AA2 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FC3632A7EB64066A679A598 /* icomoon.ttf */; };
+		6048F974BE224CE9AF3DF1FB /* Raleway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EED805DE22E44532A3620BA4 /* Raleway.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-tripploFootball-tripploFootballTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-tripploFootball-tripploFootballTests.a */; };
+		7764842B67BD4741A1CA853D /* Raleway_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 190F570926D046A89F7DD9D4 /* Raleway_bold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A58D38C6E16146F38D43F4AD /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECE77E3212F64CDCA95A4801 /* Gilroy-Regular.ttf */; };
+		FC5F7711D8724DECAB54CD5D /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B493D7312B98420DB91DEE78 /* Gilroy-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,23 +35,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00DB823B60514C6FB3906D92 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Bold.ttf"; path = "../assets/fonts/Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* tripploFootballTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tripploFootballTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* tripploFootballTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tripploFootballTests.m; sourceTree = "<group>"; };
+		010E312999344D0FABE3B588 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		107799F3635B433AA325428D /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* tripploFootball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tripploFootball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = tripploFootball/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = tripploFootball/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = tripploFootball/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = tripploFootball/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = tripploFootball/main.m; sourceTree = "<group>"; };
+		16D04F9AF93546D59A5681A7 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		190F570926D046A89F7DD9D4 /* Raleway_bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Raleway_bold.ttf; path = ../assets/fonts/Raleway_bold.ttf; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-tripploFootball-tripploFootballTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tripploFootball-tripploFootballTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AC9B6E5295E489380D92A37 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-tripploFootball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripploFootball.debug.xcconfig"; path = "Target Support Files/Pods-tripploFootball/Pods-tripploFootball.debug.xcconfig"; sourceTree = "<group>"; };
+		4005CDC57FD84186A8C1042A /* Gilroy-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Heavy.ttf"; path = "../assets/fonts/Gilroy-Heavy.ttf"; sourceTree = "<group>"; };
+		478E3F9069224BCF985C2CDE /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		4F21485853EA44578709DF8A /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-tripploFootball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripploFootball.release.xcconfig"; path = "Target Support Files/Pods-tripploFootball/Pods-tripploFootball.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-tripploFootball-tripploFootballTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripploFootball-tripploFootballTests.debug.xcconfig"; path = "Target Support Files/Pods-tripploFootball-tripploFootballTests/Pods-tripploFootball-tripploFootballTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-tripploFootball.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tripploFootball.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EBF7C74FA264A33B8007501 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = tripploFootball/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-tripploFootball-tripploFootballTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripploFootball-tripploFootballTests.release.xcconfig"; path = "Target Support Files/Pods-tripploFootball-tripploFootballTests/Pods-tripploFootball-tripploFootballTests.release.xcconfig"; sourceTree = "<group>"; };
+		8FC3632A7EB64066A679A598 /* icomoon.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = icomoon.ttf; path = ../assets/fonts/icomoon.ttf; sourceTree = "<group>"; };
+		90C6AAF853124BFCB7B997B0 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		940969777DBB4B2BB3B42ADE /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		9A08DF114C7E49F6A86633BB /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		B493D7312B98420DB91DEE78 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Medium.ttf"; path = "../assets/fonts/Gilroy-Medium.ttf"; sourceTree = "<group>"; };
+		C42FAA162A034A7C94174E21 /* Gilroy-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Light.ttf"; path = "../assets/fonts/Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		CF29FDC27D264ADC8F3AC291 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		DB35FEB10D5E4DE7BB4AE386 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		DBA6ADB5EF0E41B7AFF7E956 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		E290BEAF8D1F411DB6BBB687 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		E3D400F3EC3B47BA9A3F08ED /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		ECE77E3212F64CDCA95A4801 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Regular.ttf"; path = "../assets/fonts/Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EED805DE22E44532A3620BA4 /* Raleway.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Raleway.ttf; path = ../assets/fonts/Raleway.ttf; sourceTree = "<group>"; };
+		F5EE5B43B57C490CAA94E710 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +154,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				C27AAB62479A4D7A9BF2F05D /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -146,6 +179,37 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-tripploFootball-tripploFootballTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C27AAB62479A4D7A9BF2F05D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3D400F3EC3B47BA9A3F08ED /* AntDesign.ttf */,
+				DB35FEB10D5E4DE7BB4AE386 /* Entypo.ttf */,
+				90C6AAF853124BFCB7B997B0 /* EvilIcons.ttf */,
+				107799F3635B433AA325428D /* Feather.ttf */,
+				940969777DBB4B2BB3B42ADE /* FontAwesome.ttf */,
+				E290BEAF8D1F411DB6BBB687 /* FontAwesome5_Brands.ttf */,
+				478E3F9069224BCF985C2CDE /* FontAwesome5_Regular.ttf */,
+				010E312999344D0FABE3B588 /* FontAwesome5_Solid.ttf */,
+				2AC9B6E5295E489380D92A37 /* Fontisto.ttf */,
+				CF29FDC27D264ADC8F3AC291 /* Foundation.ttf */,
+				16D04F9AF93546D59A5681A7 /* Ionicons.ttf */,
+				7EBF7C74FA264A33B8007501 /* MaterialCommunityIcons.ttf */,
+				9A08DF114C7E49F6A86633BB /* MaterialIcons.ttf */,
+				DBA6ADB5EF0E41B7AFF7E956 /* Octicons.ttf */,
+				F5EE5B43B57C490CAA94E710 /* SimpleLineIcons.ttf */,
+				4F21485853EA44578709DF8A /* Zocial.ttf */,
+				00DB823B60514C6FB3906D92 /* Gilroy-Bold.ttf */,
+				4005CDC57FD84186A8C1042A /* Gilroy-Heavy.ttf */,
+				C42FAA162A034A7C94174E21 /* Gilroy-Light.ttf */,
+				B493D7312B98420DB91DEE78 /* Gilroy-Medium.ttf */,
+				ECE77E3212F64CDCA95A4801 /* Gilroy-Regular.ttf */,
+				8FC3632A7EB64066A679A598 /* icomoon.ttf */,
+				190F570926D046A89F7DD9D4 /* Raleway_bold.ttf */,
+				EED805DE22E44532A3620BA4 /* Raleway.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +308,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				0EA06630A5EE423DB528E89C /* Gilroy-Bold.ttf in Resources */,
+				2D06D31D07554E7EBBF62B0E /* Gilroy-Heavy.ttf in Resources */,
+				175D5660CA5D4D648BE47B29 /* Gilroy-Light.ttf in Resources */,
+				FC5F7711D8724DECAB54CD5D /* Gilroy-Medium.ttf in Resources */,
+				A58D38C6E16146F38D43F4AD /* Gilroy-Regular.ttf in Resources */,
+				410C00A2E87E41BAA85D3AA2 /* icomoon.ttf in Resources */,
+				7764842B67BD4741A1CA853D /* Raleway_bold.ttf in Resources */,
+				6048F974BE224CE9AF3DF1FB /* Raleway.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
